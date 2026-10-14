@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import RubenSummaryPage from './pages/RubenSummary'
-import './App.css'
+import './css/App.css'
 
 function App() {
   return (
