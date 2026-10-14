@@ -232,3 +232,150 @@ article p {
     padding-left: 20px;
   }
 }
+
+.portfolio-page {
+  min-height: 100vh;
+
+  color: #111318;
+  background: #f2f2f2;
+}
+
+.portfolio-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 96px;
+  padding: 0 48px;
+
+  color: #f2f2f2;
+  background: #050506;
+}
+
+.portfolio-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  font-size: 1.5rem;
+}
+
+.portfolio-photo-placeholder {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+
+  border: 1px solid currentColor;
+
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.portfolio-nav {
+  display: flex;
+  gap: 48px;
+}
+
+.portfolio-nav a {
+  position: relative;
+
+  font-size: 1.1rem;
+}
+
+.portfolio-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+
+  height: 1px;
+
+  background: var(--accent);
+
+  content: "";
+
+  transform: scaleX(0);
+
+  transition: transform 0.2s ease;
+}
+
+.portfolio-nav a:hover::after,
+.portfolio-nav a.active::after {
+  transform: scaleX(1);
+}
+
+.portfolio-main {
+  width: 100%;
+}
+
+.portfolio-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.7fr);
+  gap: 72px;
+  align-items: center;
+
+  min-height: calc(100vh - 96px);
+  padding: 72px 8vw;
+
+  border-bottom: none;
+}
+
+.portfolio-summary h1 {
+  margin-bottom: 32px;
+
+  color: #111318;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1;
+  text-transform: none;
+}
+
+.portfolio-eyebrow {
+  margin-bottom: 16px;
+
+  color: #4f5969;
+
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.portfolio-summary__text {
+  max-width: 700px;
+
+  color: #343943;
+
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.portfolio-photo-large {
+  display: grid;
+  min-height: 480px;
+  place-items: center;
+
+  border: 1px solid #111318;
+
+  color: #626b7a;
+
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+.portfolio-placeholder-page {
+  min-height: calc(100vh - 96px);
+  padding: 72px 8vw;
+
+  border-bottom: none;
+}
+
+.portfolio-placeholder-page h1 {
+  color: #111318;
+
+  text-transform: none;
+}

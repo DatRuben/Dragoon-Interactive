@@ -1,43 +1,36 @@
+import PortfolioHeader from '../components/PortfolioHeader'
+
 function RubenSummary() {
   return (
-    <>
-      <header className="portfolio-header">
-        <a href="/" className="portfolio-brand">
-          <span className="portfolio-photo-placeholder">
-            RB
-          </span>
+    <div className="portfolio-page">
+      <PortfolioHeader
+        name="Ruben Becerril"
+        initials="RB"
+        basePath="/team/ruben"
+      />
 
-          <span>Ruben Becerril</span>
-        </a>
-
-        <nav className="portfolio-nav">
-          <a href="/team/ruben">Summary</a>
-          <a href="/team/ruben/experience">Experience</a>
-          <a href="/team/ruben/info">Info</a>
-        </nav>
-      </header>
-
-      <main>
+      <main className="portfolio-main">
         <section className="portfolio-summary">
-          <div>
-            <p className="section-label">
+          <div className="portfolio-summary__content">
+            <p className="portfolio-eyebrow">
               RUBEN BECERRIL
             </p>
 
             <h1>Summary</h1>
 
-            <p>
+            <p className="portfolio-summary__text">
               Software developer focused on building scalable systems,
-              interactive applications, and game development tools.
+              interactive applications, web software, and game development
+              tools.
             </p>
           </div>
 
           <div className="portfolio-photo-large">
-            Photo
+            PHOTO
           </div>
         </section>
       </main>
-    </>
+    </div>
   )
 }
 
