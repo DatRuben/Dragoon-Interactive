@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function HomePage() {
   return (
     <>
@@ -62,8 +64,10 @@ function HomePage() {
           <h2>Team</h2>
 
           <article>
-            <h3>Ruben Becerril</h3>
-            <p>Software Development</p>
+            <Link to="/team/ruben">
+              <h3>Ruben Becerril</h3>
+              <p>Software Development</p>
+            </Link>
           </article>
 
           <article>
