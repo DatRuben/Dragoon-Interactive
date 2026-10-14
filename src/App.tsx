@@ -3,28 +3,43 @@ import './App.css'
 function App() {
   return (
     <>
-      <header>
-        <nav>
-          <a href="#home">DRAGOON INTERACTIVE</a>
+      <header className="site-header">
+        <a className="brand" href="#home">
+          <span className="brand-mark" aria-hidden="true">
+            DI
+          </span>
 
-          <div>
-            <a href="#projects">PROJECTS</a>
-            <a href="#team">TEAM</a>
-            <a href="#about">ABOUT</a>
-            <a href="#contact">CONTACT</a>
-          </div>
+          <span className="brand-name">
+            Dragoon Interactive
+          </span>
+        </a>
+
+        <nav className="site-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#team">Team</a>
         </nav>
       </header>
 
       <main>
-        <section id="home">
-          <p>01 / HOME</p>
+        <section id="home" className="hero-section">
+          <div className="hero-background" aria-hidden="true"></div>
 
-          <h1>Dragoon Interactive</h1>
+          <div className="hero-content">
+            <p className="section-label">
+              01 / HOME
+            </p>
 
-          <p>
-            Software, games, and interactive experiences.
-          </p>
+            <h1>
+              Dragoon
+              <br />
+              Interactive
+            </h1>
+
+            <p className="hero-tagline">
+              Software, games, and interactive experiences.
+            </p>
+          </div>
         </section>
 
         <section id="projects">
