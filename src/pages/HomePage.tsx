@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom'
-import useSectionScroll from '../hooks/useSectionScroll'
+import useSmoothSections from '../hooks/useSmoothSections'
 
 function HomePage() {
-  useSectionScroll({
-    containerSelector: '.home-page',
-    sectionSelector: 'main > section',
-    duration: 1000,
+  useSmoothSections({
+    wrapperSelector: '.home-page',
+    contentSelector: '.home-page main',
+    sectionSelector: 'section',
   })
-
 
   return (
     <div className="home-page">

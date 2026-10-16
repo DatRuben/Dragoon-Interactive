@@ -1,13 +1,12 @@
 import ExperienceTabs from '../components/ExperienceTabs'
 import PortfolioHeader from '../components/PortfolioHeader'
-import useSectionScroll from '../hooks/useSectionScroll'
+import useSmoothSections from '../hooks/useSmoothSections'
 
 function RubenSummary() {
-  useSectionScroll({
-    containerSelector: '.portfolio-page',
-    sectionSelector: '.portfolio-main > section',
-    offset: 96,
-    duration: 1000,
+  useSmoothSections({
+    wrapperSelector: '.portfolio-page',
+    contentSelector: '.portfolio-main',
+    sectionSelector: 'section',
   })
 
   return (

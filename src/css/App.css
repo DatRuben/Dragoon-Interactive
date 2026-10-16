@@ -238,8 +238,7 @@ article p {
   height: 100vh;
 
   overflow-y: auto;
-
-  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
 }
 
 .portfolio-page {
@@ -472,8 +471,6 @@ article p {
 
 .home-page section {
   min-height: 100vh;
-
-  border-bottom: none;
 }
 
 .home-page section:not(:first-of-type) {
