@@ -39,6 +39,7 @@ function useSmoothSections({
       autoRaf: true,
       smoothWheel: true,
       wheelMultiplier: 0.85,
+      anchors: true,
     })
 
     const snap = new Snap(lenis, {
@@ -50,12 +51,57 @@ function useSmoothSections({
         1 - Math.pow(1 - t, 4),
     })
 
-    snap.addElements(sections, {
-      align: 'start',
+    let removeSnapPoints: Array<() => void> = []
+
+    const getLocalSectionTop = (
+      section: HTMLElement,
+    ) => {
+      const wrapperRect =
+        wrapper.getBoundingClientRect()
+
+      const sectionRect =
+        section.getBoundingClientRect()
+
+      return (
+        sectionRect.top -
+        wrapperRect.top +
+        wrapper.scrollTop
+      )
+    }
+
+    const rebuildSnapPoints = () => {
+      removeSnapPoints.forEach((remove) => {
+        remove()
+      })
+
+      removeSnapPoints = sections.map((section) => {
+        return snap.add(
+          getLocalSectionTop(section),
+        )
+      })
+    }
+
+    rebuildSnapPoints()
+
+    const resizeObserver = new ResizeObserver(() => {
+      rebuildSnapPoints()
+    })
+
+    resizeObserver.observe(wrapper)
+    resizeObserver.observe(content)
+
+    sections.forEach((section) => {
+      resizeObserver.observe(section)
     })
 
     return () => {
-      snap.stop()
+      resizeObserver.disconnect()
+
+      removeSnapPoints.forEach((remove) => {
+        remove()
+      })
+
+      snap.destroy()
       lenis.destroy()
     }
   }, [
