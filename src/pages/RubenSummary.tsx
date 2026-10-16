@@ -40,11 +40,13 @@ function RubenSummary() {
       <div className="portfolio-scroll">
         <main className="portfolio-main">
           <section
-            id="info"
-            className="portfolio-section"
+            id="summary"
+            className="portfolio-summary"
             data-scroll-screen
-            data-scroll-label="Info"
-            data-nav-section="info"
+            data-scroll-label="Summary"
+            data-scroll-group="Portfolio"
+            data-scroll-subtitle="Overview"
+            data-nav-section="summary"
           >
             <div className="portfolio-summary__content">
               <p className="portfolio-eyebrow">
@@ -73,6 +75,9 @@ function RubenSummary() {
             id="info"
             className="portfolio-section"
             data-scroll-screen
+            data-scroll-label="Info"
+            data-scroll-group="Portfolio"
+            data-scroll-subtitle="Resume / Contact"
             data-nav-section="info"
           >
             <p className="portfolio-eyebrow">

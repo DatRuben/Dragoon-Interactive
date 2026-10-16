@@ -75,6 +75,8 @@ function DevelopmentExperience() {
                     className="experience-screen"
                     data-scroll-screen
                     data-scroll-label={project.title}
+                    data-scroll-group="Development Experience"
+                    data-scroll-subtitle={project.tech.join(' / ')}
                     data-nav-section="experience"
                     data-experience-type="development"
                 >

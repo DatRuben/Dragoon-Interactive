@@ -27,25 +27,57 @@ function PortfolioScrollIndicator({
   const activeScreen =
     screens[activeIndex]
 
+  const progress =
+    screens.length > 1
+      ? (activeIndex /
+          (screens.length - 1)) *
+        100
+      : 100
+
   return (
     <aside
       className="portfolio-scroll-indicator"
-      aria-label="Portfolio position"
+      aria-label="Portfolio navigation"
     >
-      <div className="scroll-indicator__status">
-        <span className="scroll-indicator__count">
-          {String(activeIndex + 1).padStart(2, '0')}
-          {' / '}
-          {String(screens.length).padStart(2, '0')}
-        </span>
+      <div className="scroll-indicator__heading">
+        PORTFOLIO INDEX
+      </div>
 
-        <span className="scroll-indicator__label">
+      <div className="scroll-indicator__current">
+        <div className="scroll-indicator__meta">
+          <span className="scroll-indicator__count">
+            {String(activeIndex + 1).padStart(2, '0')}
+            {' / '}
+            {String(screens.length).padStart(2, '0')}
+          </span>
+
+          <span className="scroll-indicator__group">
+            {activeScreen.group}
+          </span>
+        </div>
+
+        <strong className="scroll-indicator__label">
           {activeScreen.label}
-        </span>
+        </strong>
+
+        {activeScreen.subtitle && (
+          <span className="scroll-indicator__subtitle">
+            {activeScreen.subtitle}
+          </span>
+        )}
+      </div>
+
+      <div className="scroll-indicator__progress">
+        <div
+          className="scroll-indicator__progress-fill"
+          style={{
+            width: `${progress}%`,
+          }}
+        />
       </div>
 
       <nav
-        className="scroll-indicator__markers"
+        className="scroll-indicator__screens"
         aria-label="Portfolio screens"
       >
         {screens.map((screen, index) => {
@@ -56,14 +88,14 @@ function PortfolioScrollIndicator({
             index < activeIndex
 
           let className =
-            'scroll-indicator__marker'
+            'scroll-indicator__screen'
 
           if (isActive) {
             className +=
-              ' scroll-indicator__marker--active'
+              ' scroll-indicator__screen--active'
           } else if (isComplete) {
             className +=
-              ' scroll-indicator__marker--complete'
+              ' scroll-indicator__screen--complete'
           }
 
           return (
@@ -71,15 +103,24 @@ function PortfolioScrollIndicator({
               key={screen.id}
               href={`#${screen.id}`}
               className={className}
-              aria-label={`Go to ${screen.label}`}
               aria-current={
                 isActive
                   ? 'page'
                   : undefined
               }
-              title={screen.label}
             >
-              <span />
+              <span className="scroll-indicator__screen-number">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+
+              <span className="scroll-indicator__screen-title">
+                {screen.label}
+              </span>
+
+              <span
+                className="scroll-indicator__screen-line"
+                aria-hidden="true"
+              />
             </a>
           )
         })}
