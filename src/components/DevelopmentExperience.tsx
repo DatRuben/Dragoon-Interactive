@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import PortfolioProjectFeature from './PortfolioProjectFeature'
 import type { PortfolioProject } from '../types/portfolio'
 
@@ -10,11 +9,13 @@ const projects: PortfolioProject[] = [
       'React',
       'TypeScript',
       'Google Drive API',
+      'Google OAuth',
+      'Three.js',
     ],
     description:
-      'A customizable project-management application with shared project data, collaboration, rich attachments, and interactive 3D file previews.',
+      'A production project-management application built around customizable workflows, user-owned Google Drive storage, collaboration, and visual asset management.',
     role:
-      'Designed and developed the application and its supporting systems.',
+      'Designed and developed the application, including Google authentication and Drive integration, conflict-aware synchronization, shared project workflows, attachment handling, interactive 3D previews, and self-hosted deployment.',
     media: [],
   },
   {
@@ -25,9 +26,9 @@ const projects: PortfolioProject[] = [
       'C#',
     ],
     description:
-      'A Unity game project focused on scalable gameplay systems, inventory interactions, combat skills, and character mechanics.',
+      'An ongoing RPG project focused on reusable gameplay architecture and systems that can support different character types, equipment configurations, and combat behavior.',
     role:
-      'Gameplay programming and systems development.',
+      'Developed character profile and persistence systems, grid inventory and equipment handling, world-item interactions, centralized gameplay-state restrictions, combat skill resolution and execution, and combat/resource systems.',
     media: [],
   },
   {
@@ -37,50 +38,48 @@ const projects: PortfolioProject[] = [
       'React',
       'TypeScript',
       'Vite',
+      'Lenis',
     ],
     description:
-      'A studio and portfolio website for presenting software, game development, team members, and future Dragoon Interactive projects.',
+      'A studio and portfolio website designed to present software, game development work, team members, and future Dragoon Interactive projects.',
     role:
-      'Frontend development, site architecture, and deployment.',
+      'Developing the frontend architecture, reusable portfolio components, responsive interface, section-based navigation, smooth scrolling behavior, routing, and deployment pipeline.',
+    media: [],
+  },
+  {
+    id: 'tea-shop-manager',
+    title: 'Tea Shop Manager',
+    tech: [
+      'Unity',
+      'C#',
+    ],
+    description:
+      'A Unity management game built around operating and progressing a tea shop through customer demand, inventory decisions, upgrades, and performance goals.',
+    role:
+      'Implemented inventory and recipe management, customer preferences, upgrades, day progression, money and goal systems, scoring and persistent high scores, UI state, and gameplay movement logic.',
     media: [],
   },
 ]
 
 function DevelopmentExperience() {
-  const [activeProjectId, setActiveProjectId] =
-    useState(projects[0].id)
-
-  const activeProject =
-    projects.find(
-      (project) =>
-        project.id === activeProjectId,
-    ) ?? projects[0]
-
   return (
     <div className="development-experience">
-      <div className="development-project-nav">
-        {projects.map((project) => (
-          <button
-            key={project.id}
-            type="button"
-            className={
-              project.id === activeProjectId
-                ? 'development-project-nav__button development-project-nav__button--active'
-                : 'development-project-nav__button'
-            }
-            onClick={() =>
-              setActiveProjectId(project.id)
-            }
-          >
-            {project.title}
-          </button>
-        ))}
-      </div>
+      {projects.map((project, index) => (
+        <div
+          key={project.id}
+          className="development-project"
+        >
+          <p className="development-project__index">
+            {String(index + 1).padStart(2, '0')}
+            {' / '}
+            {String(projects.length).padStart(2, '0')}
+          </p>
 
-      <PortfolioProjectFeature
-        key={activeProject.id}
-        project={activeProject}
-      />
+          <PortfolioProjectFeature
+            project={project}
+          />
+        </div>
+      ))}
     </div>
   )
 }

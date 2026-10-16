@@ -3,17 +3,19 @@ import PortfolioHeader from '../components/PortfolioHeader'
 import useSmoothSections from '../hooks/useSmoothSections'
 
 function RubenSummary() {
-  useSmoothSections({
-    wrapperSelector: '.portfolio-scroll',
-    contentSelector: '.portfolio-main',
-    sectionSelector: 'section',
-  })
+  const activeSection =
+    useSmoothSections({
+      wrapperSelector: '.portfolio-scroll',
+      contentSelector: '.portfolio-main',
+      sectionSelector: 'section',
+    })
 
   return (
     <div className="portfolio-page">
       <PortfolioHeader
         name="Ruben Becerril"
         initials="RB"
+        activeSection={activeSection}
       />
 
       <div className="portfolio-scroll">

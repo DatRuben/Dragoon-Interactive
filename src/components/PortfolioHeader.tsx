@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 type PortfolioHeaderProps = {
   name: string
   initials: string
+  activeSection: string
 }
 
 function PortfolioHeader({
   name,
   initials,
+  activeSection,
 }: PortfolioHeaderProps) {
   return (
     <header className="portfolio-header">
@@ -23,9 +25,38 @@ function PortfolioHeader({
         className="portfolio-nav"
         aria-label={`${name} portfolio`}
       >
-        <a href="#summary">Summary</a>
-        <a href="#experience">Experience</a>
-        <a href="#info">Info</a>
+        <a
+          href="#summary"
+          className={
+            activeSection === 'summary'
+              ? 'active'
+              : undefined
+          }
+        >
+          Summary
+        </a>
+
+        <a
+          href="#experience"
+          className={
+            activeSection === 'experience'
+              ? 'active'
+              : undefined
+          }
+        >
+          Experience
+        </a>
+
+        <a
+          href="#info"
+          className={
+            activeSection === 'info'
+              ? 'active'
+              : undefined
+          }
+        >
+          Info
+        </a>
       </nav>
     </header>
   )
