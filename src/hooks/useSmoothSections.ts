@@ -9,6 +9,11 @@ type SmoothSectionsOptions = {
   sectionSelector: string
 }
 
+export type ScrollScreenInfo = {
+  id: string
+  label: string
+}
+
 type ActiveScrollScreen = {
   id: string
   navSection: string
@@ -27,12 +32,19 @@ function useSmoothSections({
       experienceType: '',
     })
 
+  const [screens, setScreens] =
+    useState<ScrollScreenInfo[]>([])
+
   useEffect(() => {
     const wrapper =
-      document.querySelector<HTMLElement>(wrapperSelector)
+      document.querySelector<HTMLElement>(
+        wrapperSelector,
+      )
 
     const content =
-      document.querySelector<HTMLElement>(contentSelector)
+      document.querySelector<HTMLElement>(
+        contentSelector,
+      )
 
     if (!wrapper || !content) {
       return
@@ -47,6 +59,15 @@ function useSmoothSections({
     if (sections.length === 0) {
       return
     }
+
+    setScreens(
+      sections.map((section) => ({
+        id: section.id,
+        label:
+          section.dataset.scrollLabel ??
+          section.id,
+      })),
+    )
 
     const updateActiveScreen = () => {
       const wrapperRect =
@@ -137,11 +158,13 @@ function useSmoothSections({
         remove()
       })
 
-      removeSnapPoints = sections.map((section) => {
-        return snap.add(
-          getLocalSectionTop(section),
-        )
-      })
+      removeSnapPoints = sections.map(
+        (section) => {
+          return snap.add(
+            getLocalSectionTop(section),
+          )
+        },
+      )
     }
 
     rebuildSnapPoints()
@@ -155,9 +178,10 @@ function useSmoothSections({
       },
     )
 
-    const resizeObserver = new ResizeObserver(() => {
-      rebuildSnapPoints()
-    })
+    const resizeObserver =
+      new ResizeObserver(() => {
+        rebuildSnapPoints()
+      })
 
     resizeObserver.observe(wrapper)
     resizeObserver.observe(content)
@@ -187,7 +211,10 @@ function useSmoothSections({
     sectionSelector,
   ])
 
-  return activeScreen
+  return {
+    activeScreen,
+    screens,
+  }
 }
 
 export default useSmoothSections

@@ -3,14 +3,17 @@ import ExperienceHeader from '../components/ExperienceHeader'
 import PortfolioHeader from '../components/PortfolioHeader'
 import WorkExperience from '../components/WorkExperience'
 import useSmoothSections from '../hooks/useSmoothSections'
+import PortfolioScrollIndicator from '../components/PortfolioScrollIndicator'
 
 function RubenSummary() {
-  const activeScreen =
-    useSmoothSections({
-      wrapperSelector: '.portfolio-scroll',
-      contentSelector: '.portfolio-main',
-      sectionSelector: '[data-scroll-screen]',
-    })
+  const {
+    activeScreen,
+    screens,
+  } = useSmoothSections({
+    wrapperSelector: '.portfolio-scroll',
+    contentSelector: '.portfolio-main',
+    sectionSelector: '[data-scroll-screen]',
+  })
 
   return (
     <div className="portfolio-page">
@@ -29,13 +32,19 @@ function RubenSummary() {
         }
       />
 
+      <PortfolioScrollIndicator
+        screens={screens}
+        activeScreenId={activeScreen.id}
+      />
+
       <div className="portfolio-scroll">
         <main className="portfolio-main">
           <section
-            id="summary"
-            className="portfolio-summary"
+            id="info"
+            className="portfolio-section"
             data-scroll-screen
-            data-nav-section="summary"
+            data-scroll-label="Info"
+            data-nav-section="info"
           >
             <div className="portfolio-summary__content">
               <p className="portfolio-eyebrow">

@@ -32,6 +32,7 @@ function WorkExperience() {
           }
           className="experience-screen work-screen"
           data-scroll-screen
+          data-scroll-label={experience.company}
           data-nav-section="experience"
           data-experience-type="work"
         >

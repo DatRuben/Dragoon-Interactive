@@ -263,6 +263,13 @@ article p {
 
   overflow-y: auto;
   overscroll-behavior-y: contain;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.portfolio-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .portfolio-header {
@@ -501,7 +508,7 @@ article p {
 }
 
 .portfolio-section {
-  min-height: calc(100vh - 96px);
+  min-height: calc(100vh - var(--portfolio-header-height));
   padding: 56px 8vw 72px;
 
   border-top: 1px solid #111318;
@@ -725,4 +732,92 @@ article p {
 
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+.portfolio-scroll-indicator {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  z-index: 950;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+
+  transform: translateY(-50%);
+}
+
+.scroll-indicator__status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+
+  max-width: 140px;
+
+  text-align: right;
+}
+
+.scroll-indicator__count {
+  color: #626b7a;
+
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.scroll-indicator__label {
+  color: #111318;
+
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator__markers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 9px;
+}
+
+.scroll-indicator__marker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  width: 34px;
+  height: 8px;
+}
+
+.scroll-indicator__marker span {
+  display: block;
+
+  width: 10px;
+  height: 2px;
+
+  background: #b1b5bc;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.scroll-indicator__marker--complete span {
+  width: 18px;
+
+  background: #626b7a;
+}
+
+.scroll-indicator__marker--active span {
+  width: 34px;
+
+  background: #111318;
+}
+
+.scroll-indicator__marker:hover span {
+  width: 34px;
 }
