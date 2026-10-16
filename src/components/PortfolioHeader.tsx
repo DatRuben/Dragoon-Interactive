@@ -1,15 +1,13 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 type PortfolioHeaderProps = {
   name: string
   initials: string
-  basePath: string
 }
 
 function PortfolioHeader({
   name,
   initials,
-  basePath,
 }: PortfolioHeaderProps) {
   return (
     <header className="portfolio-header">
@@ -21,18 +19,13 @@ function PortfolioHeader({
         <span>{name}</span>
       </Link>
 
-      <nav className="portfolio-nav" aria-label={`${name} portfolio`}>
-        <NavLink to={basePath} end>
-          Summary
-        </NavLink>
-
-        <NavLink to={`${basePath}/experience`}>
-          Experience
-        </NavLink>
-
-        <NavLink to={`${basePath}/info`}>
-          Info
-        </NavLink>
+      <nav
+        className="portfolio-nav"
+        aria-label={`${name} portfolio`}
+      >
+        <a href="#summary">Summary</a>
+        <a href="#experience">Experience</a>
+        <a href="#info">Info</a>
       </nav>
     </header>
   )

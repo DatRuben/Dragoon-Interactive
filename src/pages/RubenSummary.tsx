@@ -1,3 +1,4 @@
+import ExperienceTabs from '../components/ExperienceTabs'
 import PortfolioHeader from '../components/PortfolioHeader'
 
 function RubenSummary() {
@@ -6,11 +7,13 @@ function RubenSummary() {
       <PortfolioHeader
         name="Ruben Becerril"
         initials="RB"
-        basePath="/team/ruben"
       />
 
       <main className="portfolio-main">
-        <section className="portfolio-summary">
+        <section
+          id="summary"
+          className="portfolio-summary"
+        >
           <div className="portfolio-summary__content">
             <p className="portfolio-eyebrow">
               RUBEN BECERRIL
@@ -28,6 +31,34 @@ function RubenSummary() {
           <div className="portfolio-photo-large">
             PHOTO
           </div>
+        </section>
+
+        <section
+          id="experience"
+          className="portfolio-section"
+        >
+          <p className="portfolio-eyebrow">
+            EXPERIENCE
+          </p>
+
+          <h2>Experience</h2>
+
+          <ExperienceTabs />
+        </section>
+
+        <section
+          id="info"
+          className="portfolio-section"
+        >
+          <p className="portfolio-eyebrow">
+            INFO
+          </p>
+
+          <h2>Info</h2>
+
+          <p className="portfolio-section__text">
+            Resume and contact information will go here.
+          </p>
         </section>
       </main>
     </div>
