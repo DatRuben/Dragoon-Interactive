@@ -233,9 +233,18 @@ article p {
   }
 }
 
+.home-page,
 .portfolio-page {
-  min-height: 100vh;
+  height: 100vh;
 
+  overflow-y: auto;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 96px;
+}
+
+.portfolio-page {
   color: #111318;
   background: #f2f2f2;
 }
@@ -323,6 +332,9 @@ article p {
   padding: 72px 8vw;
 
   border-bottom: none;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .portfolio-summary h1 {
@@ -380,18 +392,15 @@ article p {
   text-transform: none;
 }
 
-#summary,
-#experience,
-#info {
-  scroll-margin-top: 96px;
-}
-
 .portfolio-section {
-  min-height: auto;
+  min-height: calc(100vh - 96px);
   padding: 96px 8vw 120px;
 
   border-top: 48px solid #111318;
   border-bottom: none;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .portfolio-section h2 {
@@ -467,4 +476,17 @@ article p {
   line-height: 1.7;
   letter-spacing: normal;
   text-transform: none;
+}
+
+.home-page section {
+  min-height: 100vh;
+
+  border-bottom: none;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.home-page section:not(:first-of-type) {
+  border-top: 48px solid #050506;
 }

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function HomePage() {
   return (
-    <>
+    <div className="home-page">
       <header className="site-header">
         <a className="brand" href="#home">
           <span className="brand-mark" aria-hidden="true">
@@ -88,7 +88,7 @@ function HomePage() {
           <h2>Contact</h2>
         </section>
       </main>
-    </>
+    </div>
   )
 }
 
