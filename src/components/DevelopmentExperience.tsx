@@ -43,7 +43,7 @@ const projects: PortfolioProject[] = [
     description:
       'A studio and portfolio website designed to present software, game development work, team members, and future Dragoon Interactive projects.',
     role:
-      'Developing the frontend architecture, reusable portfolio components, responsive interface, section-based navigation, smooth scrolling behavior, routing, and deployment pipeline.',
+      'Developing the frontend architecture, reusable portfolio components, responsive interface, section-based navigation, smooth scrolling behavior, routing, and deployment.',
     media: [],
   },
   {
@@ -63,24 +63,34 @@ const projects: PortfolioProject[] = [
 
 function DevelopmentExperience() {
   return (
-    <div className="development-experience">
+    <>
       {projects.map((project, index) => (
-        <div
+        <section
           key={project.id}
-          className="development-project"
+          id={
+            index === 0
+              ? 'experience'
+              : `experience-${project.id}`
+          }
+          className="experience-screen"
+          data-scroll-screen
+          data-nav-section="experience"
+          data-experience-type="development"
         >
-          <p className="development-project__index">
-            {String(index + 1).padStart(2, '0')}
-            {' / '}
-            {String(projects.length).padStart(2, '0')}
-          </p>
+          <div className="experience-screen__content">
+            <p className="experience-screen__index">
+              {String(index + 1).padStart(2, '0')}
+              {' / '}
+              {String(projects.length).padStart(2, '0')}
+            </p>
 
-          <PortfolioProjectFeature
-            project={project}
-          />
-        </div>
+            <PortfolioProjectFeature
+              project={project}
+            />
+          </div>
+        </section>
       ))}
-    </div>
+    </>
   )
 }
 

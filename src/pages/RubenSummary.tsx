@@ -1,13 +1,15 @@
-import ExperienceTabs from '../components/ExperienceTabs'
+import DevelopmentExperience from '../components/DevelopmentExperience'
+import ExperienceHeader from '../components/ExperienceHeader'
 import PortfolioHeader from '../components/PortfolioHeader'
+import WorkExperience from '../components/WorkExperience'
 import useSmoothSections from '../hooks/useSmoothSections'
 
 function RubenSummary() {
-  const activeSection =
+  const activeScreen =
     useSmoothSections({
       wrapperSelector: '.portfolio-scroll',
       contentSelector: '.portfolio-main',
-      sectionSelector: 'section',
+      sectionSelector: '[data-scroll-screen]',
     })
 
   return (
@@ -15,7 +17,16 @@ function RubenSummary() {
       <PortfolioHeader
         name="Ruben Becerril"
         initials="RB"
-        activeSection={activeSection}
+        activeSection={activeScreen.navSection}
+      />
+
+      <ExperienceHeader
+        visible={
+          activeScreen.navSection === 'experience'
+        }
+        activeType={
+          activeScreen.experienceType
+        }
       />
 
       <div className="portfolio-scroll">
@@ -23,6 +34,8 @@ function RubenSummary() {
           <section
             id="summary"
             className="portfolio-summary"
+            data-scroll-screen
+            data-nav-section="summary"
           >
             <div className="portfolio-summary__content">
               <p className="portfolio-eyebrow">
@@ -43,22 +56,15 @@ function RubenSummary() {
             </div>
           </section>
 
-          <section
-            id="experience"
-            className="portfolio-section"
-          >
-            <p className="portfolio-eyebrow">
-              EXPERIENCE
-            </p>
+          <DevelopmentExperience />
 
-            <h2>Experience</h2>
-
-            <ExperienceTabs />
-          </section>
+          <WorkExperience />
 
           <section
             id="info"
             className="portfolio-section"
+            data-scroll-screen
+            data-nav-section="info"
           >
             <p className="portfolio-eyebrow">
               INFO
