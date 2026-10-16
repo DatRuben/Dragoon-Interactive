@@ -12,8 +12,8 @@ type SmoothSectionsOptions = {
 export type ScrollScreenInfo = {
     id: string
     label: string
-    group: string
-    subtitle: string
+    navSection: string
+    experienceType: string
 }
 
 type ActiveScrollScreen = {
@@ -68,11 +68,11 @@ function useSmoothSections({
                 label:
                     section.dataset.scrollLabel ??
                     section.id,
-                group:
-                    section.dataset.scrollGroup ??
-                    '',
-                subtitle:
-                    section.dataset.scrollSubtitle ??
+                navSection:
+                    section.dataset.navSection ??
+                    section.id,
+                experienceType:
+                    section.dataset.experienceType ??
                     '',
             })),
         )
