@@ -396,11 +396,8 @@ article p {
   min-height: calc(100vh - 96px);
   padding: 96px 8vw 120px;
 
-  border-top: 48px solid #111318;
+  border-top: 1px solid #111318;
   border-bottom: none;
-
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .portfolio-section h2 {
@@ -489,4 +486,10 @@ article p {
 
 .home-page section:not(:first-of-type) {
   border-top: 48px solid #050506;
+}
+
+#summary,
+#experience,
+#info {
+  scroll-margin-top: 96px;
 }

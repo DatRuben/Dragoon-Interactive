@@ -1,7 +1,13 @@
 import ExperienceTabs from '../components/ExperienceTabs'
 import PortfolioHeader from '../components/PortfolioHeader'
+import useSectionScroll from '../hooks/useSectionScroll'
 
 function RubenSummary() {
+  useSectionScroll(
+    '.portfolio-main > section',
+    96,
+  )
+
   return (
     <div className="portfolio-page">
       <PortfolioHeader
