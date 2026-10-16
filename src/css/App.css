@@ -388,14 +388,14 @@ article p {
 
 .portfolio-section {
   min-height: calc(100vh - 96px);
-  padding: 96px 8vw 120px;
+  padding: 56px 8vw 72px;
 
   border-top: 1px solid #111318;
   border-bottom: none;
 }
 
 .portfolio-section h2 {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 
   color: #111318;
 
@@ -418,7 +418,7 @@ article p {
   flex-wrap: wrap;
   gap: 16px;
 
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .experience-tab {
