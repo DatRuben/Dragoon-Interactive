@@ -788,19 +788,23 @@ article p {
 .content-rail__group-title,
 .content-rail__child {
   display: grid;
-  grid-template-columns: 26px 1fr auto;
-  gap: 10px;
+  grid-template-columns: auto auto 1fr;
+  column-gap: 6px;
   align-items: center;
 
   width: 100%;
 
   color: #8a9099;
 
-  text-align: right;
-
   transition:
     color 0.2s ease,
     transform 0.2s ease;
+}
+
+.content-rail__main i,
+.content-rail__group-title i,
+.content-rail__child i {
+  justify-self: end;
 }
 
 .content-rail__main {
