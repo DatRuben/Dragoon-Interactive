@@ -240,8 +240,6 @@ article p {
   overflow-y: auto;
 
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 96px;
 }
 
 .portfolio-page {
@@ -332,9 +330,6 @@ article p {
   padding: 72px 8vw;
 
   border-bottom: none;
-
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .portfolio-summary h1 {
@@ -479,13 +474,10 @@ article p {
   min-height: 100vh;
 
   border-bottom: none;
-
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .home-page section:not(:first-of-type) {
-  border-top: 48px solid #050506;
+  border-top: 1px solid var(--border);
 }
 
 #summary,

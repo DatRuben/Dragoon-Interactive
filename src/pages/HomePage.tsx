@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom'
 import useSectionScroll from '../hooks/useSectionScroll'
 
 function HomePage() {
-  useSectionScroll(
-    'main > section',
-    0,
-  )
+  useSectionScroll({
+    containerSelector: '.home-page',
+    sectionSelector: 'main > section',
+    duration: 1000,
+  })
 
 
   return (

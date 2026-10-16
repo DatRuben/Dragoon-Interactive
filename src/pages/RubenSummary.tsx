@@ -3,10 +3,12 @@ import PortfolioHeader from '../components/PortfolioHeader'
 import useSectionScroll from '../hooks/useSectionScroll'
 
 function RubenSummary() {
-  useSectionScroll(
-    '.portfolio-main > section',
-    96,
-  )
+  useSectionScroll({
+    containerSelector: '.portfolio-page',
+    sectionSelector: '.portfolio-main > section',
+    offset: 96,
+    duration: 1000,
+  })
 
   return (
     <div className="portfolio-page">
