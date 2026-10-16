@@ -17,6 +17,12 @@ const projects: PortfolioProject[] = [
         role:
             'Designed and developed the application, including Google authentication and Drive integration, conflict-aware synchronization, shared project workflows, attachment handling, interactive 3D previews, and self-hosted deployment.',
         media: [],
+        highlights: [
+            'Google OAuth and user-owned Drive storage',
+            'Conflict-aware collaborative synchronization',
+            'Image, video, and interactive 3D attachments',
+            'Self-hosted HTTPS production deployment',
+        ],
     },
     {
         id: 'story-game',
@@ -30,6 +36,12 @@ const projects: PortfolioProject[] = [
         role:
             'Developed character profile and persistence systems, grid inventory and equipment handling, world-item interactions, centralized gameplay-state restrictions, combat skill resolution and execution, and combat/resource systems.',
         media: [],
+        highlights: [
+            'Character profiles and persistent character data',
+            'Grid inventory, equipment, and world-item systems',
+            'Centralized gameplay-state restrictions',
+            'Combat skills and resource systems',
+        ],
     },
     {
         id: 'dragoon-interactive',
@@ -45,6 +57,12 @@ const projects: PortfolioProject[] = [
         role:
             'Developing the frontend architecture, reusable portfolio components, responsive interface, section-based navigation, smooth scrolling behavior, routing, and deployment.',
         media: [],
+        highlights: [
+            'Reusable React and TypeScript portfolio architecture',
+            'Section-aware smooth scrolling and navigation',
+            'Hierarchical project and experience presentation',
+            'Responsive interface and self-hosted deployment',
+        ],
     },
     {
         id: 'tea-shop-manager',
@@ -58,6 +76,12 @@ const projects: PortfolioProject[] = [
         role:
             'Implemented inventory and recipe management, customer preferences, upgrades, day progression, money and goal systems, scoring and persistent high scores, UI state, and gameplay movement logic.',
         media: [],
+        highlights: [
+            'Inventory and recipe management',
+            'Customer preferences and shop upgrades',
+            'Day progression, money, and goal systems',
+            'Scoring and persistent high scores',
+        ],
     },
 ]
 

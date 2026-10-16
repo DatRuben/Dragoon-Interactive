@@ -643,20 +643,62 @@ article p {
   font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
+.portfolio-project__section {
+  margin-top: 24px;
+}
+
+.portfolio-project__label {
+  margin-bottom: 8px;
+
+  color: #707784;
+
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
 .portfolio-project__description,
 .portfolio-project__role {
+  margin-bottom: 0;
+
   color: #4f5969;
 
   font-family: var(--font-main);
-
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: normal;
   text-transform: none;
 }
 
-.portfolio-project__description {
-  margin-bottom: 20px;
+.portfolio-project__highlights {
+  display: grid;
+  gap: 7px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.portfolio-project__highlights li {
+  position: relative;
+
+  padding-left: 18px;
+
+  color: #4f5969;
+
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.portfolio-project__highlights li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  color: #111318;
+
+  content: "—";
 }
 
 @media (max-width: 800px) {

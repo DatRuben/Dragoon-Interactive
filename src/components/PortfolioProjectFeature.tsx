@@ -95,13 +95,41 @@ function PortfolioProjectFeature({
 
         <h3>{project.title}</h3>
 
-        <p className="portfolio-project__description">
-          {project.description}
-        </p>
+        <div className="portfolio-project__section">
+          <p className="portfolio-project__label">
+            OVERVIEW
+          </p>
 
-        <p className="portfolio-project__role">
-          {project.role}
-        </p>
+          <p className="portfolio-project__description">
+            {project.description}
+          </p>
+        </div>
+
+        <div className="portfolio-project__section">
+          <p className="portfolio-project__label">
+            MY WORK
+          </p>
+
+          <p className="portfolio-project__role">
+            {project.role}
+          </p>
+        </div>
+
+        <div className="portfolio-project__section">
+          <p className="portfolio-project__label">
+            KEY SYSTEMS
+          </p>
+
+          <ul className="portfolio-project__highlights">
+            {project.highlights.map(
+              (highlight) => (
+                <li key={highlight}>
+                  {highlight}
+                </li>
+              ),
+            )}
+          </ul>
+        </div>
       </div>
     </article>
   )

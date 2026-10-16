@@ -10,5 +10,6 @@ export type PortfolioProject = {
   tech: string[]
   description: string
   role: string
+  highlights: string[]
   media: PortfolioMedia[]
 }
