@@ -658,7 +658,7 @@ article p {
 }
 
 .portfolio-project__description,
-.portfolio-project__role {
+.portfolio-project__contribution {
   margin-bottom: 0;
 
   color: #4f5969;
@@ -1041,4 +1041,20 @@ article p {
 .content-rail__group-title:hover,
 .content-rail__child:hover {
   color: #111318;
+}
+
+.portfolio-project__type {
+  color: #111318;
+}
+
+.portfolio-project__team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.portfolio-project__team span {
+  color: #4f5969;
+
+  font-size: 0.9rem;
 }

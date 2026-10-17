@@ -90,6 +90,14 @@ function PortfolioProjectFeature({
 
       <div className="portfolio-project__content">
         <p className="portfolio-project__tech">
+          <span className="portfolio-project__type">
+            {project.type === 'solo'
+              ? 'SOLO PROJECT'
+              : 'TEAM PROJECT'}
+          </span>
+
+          {' / '}
+
           {project.tech.join(' / ')}
         </p>
 
@@ -105,15 +113,36 @@ function PortfolioProjectFeature({
           </p>
         </div>
 
-        <div className="portfolio-project__section">
-          <p className="portfolio-project__label">
-            MY WORK
-          </p>
+        {project.type === 'team' &&
+          project.contribution && (
+            <div className="portfolio-project__section">
+              <p className="portfolio-project__label">
+                MY CONTRIBUTION
+              </p>
 
-          <p className="portfolio-project__role">
-            {project.role}
-          </p>
-        </div>
+              <p className="portfolio-project__contribution">
+                {project.contribution}
+              </p>
+            </div>
+          )}
+
+        {project.type === 'team' &&
+          project.members &&
+          project.members.length > 0 && (
+            <div className="portfolio-project__section">
+              <p className="portfolio-project__label">
+                TEAM
+              </p>
+
+              <div className="portfolio-project__team">
+                {project.members.map((member) => (
+                  <span key={member}>
+                    {member}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
 
         <div className="portfolio-project__section">
           <p className="portfolio-project__label">

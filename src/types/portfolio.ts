@@ -1,8 +1,3 @@
-export type PortfolioProjectMember = {
-  name: string
-  role: string
-}
-
 export type PortfolioMedia = {
   type: 'image' | 'video'
   src: string
@@ -15,8 +10,10 @@ export type PortfolioProject = {
   type: 'solo' | 'team'
   tech: string[]
   description: string
+
   contribution?: string
-  team?: PortfolioProjectMember[]
+  members?: string[]
+
   highlights: string[]
   media: PortfolioMedia[]
 }
