@@ -51,16 +51,14 @@ function RubenSummary() {
                 RUBEN BECERRIL / SOFTWARE DEVELOPER
               </p>
 
-              <h1>
-                Building software around systems,
-                interaction, and scalability.
-              </h1>
+              <h1>Software Developer</h1>
 
               <p className="portfolio-summary__text">
-                Computer Science graduate developing web applications
-                and game systems with a focus on maintainable
-                architecture, practical user experiences, and projects
-                that can grow beyond their first implementation.
+                Computer Science graduate with hands-on experience building
+                and deploying applications using React, TypeScript, C#, C++,
+                JavaScript, Python, and SQL. I focus on scalable software
+                architecture, interactive applications, API integration,
+                debugging, and long-term maintainability.
               </p>
 
               <div className="portfolio-summary__focus">
@@ -81,12 +79,20 @@ function RubenSummary() {
 
                 <div>
                   <span>04</span>
-                  <p>Software Architecture</p>
+                  <p>Self-Hosting / Deployment</p>
                 </div>
               </div>
             </div>
 
             <aside className="portfolio-summary__profile">
+              <div className="portfolio-summary__photo-shell">
+                <img
+                  className="portfolio-summary__photo"
+                  src="/RubenPhoto.jpg"
+                  alt="Portrait of Ruben Becerril"
+                />
+              </div>
+
               <p className="portfolio-summary__profile-label">
                 PROFILE
               </p>
@@ -227,7 +233,7 @@ function RubenSummary() {
                 </a>
 
                 <a
-                  href="/Ruben_Becerril_Resume.pdf"
+                  href="/Becerril_Ruben_10-12-2026.pdf"
                   target="_blank"
                   rel="noreferrer"
                 >
