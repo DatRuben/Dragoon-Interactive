@@ -2022,6 +2022,10 @@ article p {
     display: none;
   }
 
+  .portfolio-summary__focus {
+    grid-template-columns: 1fr;
+  }
+
   .site-nav {
     gap: 13px;
   }
