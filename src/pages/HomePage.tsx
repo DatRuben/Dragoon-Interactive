@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import useSmoothSections from '../hooks/useSmoothSections'
+import ContactDetails from '../components/ContactDetails'
 
 function HomePage() {
   const { activeScreen } = useSmoothSections({
@@ -349,10 +350,10 @@ function HomePage() {
 
               <div className="home-services__actions">
                 <a
-                  href="mailto:rubenbecerril.rb@gmail.com"
+                  href="#contact"
                   className="home-button home-button--primary"
                 >
-                  Email Project Idea
+                  Contact About a Project
                 </a>
 
                 <a
@@ -500,49 +501,12 @@ function HomePage() {
               and project inquiries.
             </p>
 
-            <a
-              className="home-contact__email"
-              href="mailto:rubenbecerril.rb@gmail.com"
-            >
-              rubenbecerril.rb@gmail.com
-            </a>
+            <ContactDetails tone="dark" />
 
             <div className="home-contact__links">
               <Link to="/team/ruben">
-                Portfolio
+                Ruben's Portfolio
               </Link>
-
-              <a
-                href="https://github.com/DatRuben"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/ruben-becerril-/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="https://www.upwork.com/freelancers/~01a4fd3e41986f7dba"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Upwork Profile
-              </a>
-
-              <a
-                href="https://www.upwork.com/services/product/development-it-a-custom-react-and-typescript-web-application-2110490046871661907?ref=fl_profile"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Upwork Services & Prices
-              </a>
             </div>
           </div>
         </section>

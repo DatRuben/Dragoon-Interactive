@@ -8,6 +8,7 @@ import { useState } from 'react'
 import type {
   ExperienceMode,
 } from '../types/portfolio'
+import ContactDetails from '../components/ContactDetails'
 
 function RubenSummary() {
   const [
@@ -250,49 +251,10 @@ function RubenSummary() {
                   CONTACT
                 </p>
 
-                <a href="mailto:rubenbecerril.rb@gmail.com">
-                  Email
-                </a>
-
-                <a
-                  href="https://github.com/DatRuben"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/ruben-becerril-/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn
-                </a>
-
-                <a
-                  href="https://www.upwork.com/freelancers/~01a4fd3e41986f7dba"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Upwork Profile
-                </a>
-
-                <a
-                  href="https://www.upwork.com/services/product/development-it-a-custom-react-and-typescript-web-application-2110490046871661907?ref=fl_profile"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Upwork Services & Prices
-                </a>
-
-                <a
-                  href="/Becerril_Ruben_10-12-2026.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Resume
-                </a>
+                <ContactDetails
+                  tone="light"
+                  showResume
+                />
               </div>
             </div>
           </section>
