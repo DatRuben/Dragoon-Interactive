@@ -22,20 +22,6 @@
   gap: 16px;
 }
 
-.brand-mark {
-  display: grid;
-  width: 52px;
-  height: 52px;
-  place-items: center;
-
-  border: 1px solid var(--text);
-
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
 .brand-name {
   font-size: 1.4rem;
   font-weight: 400;
@@ -78,10 +64,6 @@
 
 .site-nav a:hover::after {
   transform: scaleX(1);
-}
-
-nav div a:hover {
-  color: var(--text);
 }
 
 main {
@@ -599,19 +581,6 @@ article p {
   font-size: 0.82rem;
 }
 
-.portfolio-placeholder-page {
-  min-height: calc(100vh - 96px);
-  padding: 56px max(330px, 22vw) 72px 8vw;
-
-  border-bottom: none;
-}
-
-.portfolio-placeholder-page h1 {
-  color: #111318;
-
-  text-transform: none;
-}
-
 .portfolio-section {
   min-height: calc(100vh - var(--portfolio-header-height));
   padding: 56px calc(var(--content-rail-width) + var(--content-rail-gap)) 72px clamp(28px, 4vw, 64px);
@@ -628,15 +597,6 @@ article p {
   font-size: clamp(3rem, 7vw, 6rem);
   line-height: 1;
   text-transform: none;
-}
-
-.portfolio-section__text {
-  max-width: 700px;
-
-  color: #343943;
-
-  font-size: 1.1rem;
-  line-height: 1.7;
 }
 
 .portfolio-info {
@@ -1232,19 +1192,6 @@ article p {
   color: #111318;
 }
 
-.content-rail__sub-position {
-  align-self: flex-end;
-
-  margin-top: 3px;
-  margin-right: 10px;
-
-  color: #8a9099;
-
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-}
-
 .content-rail__main:hover,
 .content-rail__group-title:hover,
 .content-rail__child:hover {
@@ -1791,11 +1738,6 @@ article p {
     padding: 14px 20px;
 
     gap: 20px;
-  }
-
-  .brand-mark {
-    width: 42px;
-    height: 42px;
   }
 
   .brand-name {
