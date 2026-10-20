@@ -472,6 +472,16 @@ article p {
   line-height: 1.75;
 }
 
+.portfolio-summary__focus-label {
+  margin-bottom: 8px;
+
+  color: #818791;
+
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
 .portfolio-summary__focus {
   display: grid;
   grid-template-columns:
@@ -480,7 +490,6 @@ article p {
   max-width: 680px;
 
   border-top: 1px solid #bfc3c9;
-  border-left: 1px solid #bfc3c9;
 }
 
 .portfolio-summary__focus>div {
@@ -488,10 +497,18 @@ article p {
   grid-template-columns: 32px 1fr;
   gap: 10px;
 
-  padding: 14px 16px;
+  padding: 13px 0;
 
-  border-right: 1px solid #bfc3c9;
-  border-bottom: 1px solid #bfc3c9;
+  border-bottom: 1px solid #d1d4d9;
+}
+
+.portfolio-summary__focus>div:nth-child(odd) {
+  padding-right: 24px;
+}
+
+.portfolio-summary__focus>div:nth-child(even) {
+  padding-left: 24px;
+  border-left: 1px solid #d1d4d9;
 }
 
 .portfolio-summary__focus span {
@@ -2045,8 +2062,11 @@ article p {
     font-size: 0.7rem;
   }
 
-  .portfolio-summary__focus {
-    grid-template-columns: 1fr;
+  .portfolio-summary__focus>div:nth-child(odd),
+  .portfolio-summary__focus>div:nth-child(even) {
+    padding-right: 0;
+    padding-left: 0;
+    border-left: none;
   }
 
   .portfolio-project__media {
@@ -2060,4 +2080,34 @@ article p {
   .portfolio-info__block {
     min-height: auto;
   }
+}
+
+.home-team-card--link {
+  padding-right: 18px;
+  padding-left: 18px;
+
+  border-left: 2px solid transparent;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.home-team-card--link:hover {
+  border-left-color: var(--accent);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.home-team-card--link .home-team-card__action {
+  padding: 9px 12px;
+
+  border: 1px solid var(--border);
+
+  color: var(--text);
+}
+
+.home-team-card--link:hover .home-team-card__action {
+  border-color: var(--accent);
 }

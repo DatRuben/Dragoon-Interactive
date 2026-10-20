@@ -391,7 +391,7 @@ function HomePage() {
           <div className="home-team-grid">
             <Link
               to="/team/ruben"
-              className="home-team-card"
+              className="home-team-card home-team-card--link"
             >
               <span className="home-team-card__number">
                 01

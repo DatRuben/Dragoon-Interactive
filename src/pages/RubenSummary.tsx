@@ -61,6 +61,10 @@ function RubenSummary() {
                 debugging, and long-term maintainability.
               </p>
 
+              <p className="portfolio-summary__focus-label">
+                CORE AREAS
+              </p>
+
               <div className="portfolio-summary__focus">
                 <div>
                   <span>01</span>
