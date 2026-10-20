@@ -62,8 +62,8 @@ function useSmoothSections({
             return
         }
 
-        setScreens(
-            sections.map((section) => ({
+        const screenInfo = sections.map(
+            (section) => ({
                 id: section.id,
                 label:
                     section.dataset.scrollLabel ??
@@ -74,7 +74,7 @@ function useSmoothSections({
                 experienceType:
                     section.dataset.experienceType ??
                     '',
-            })),
+            }),
         )
 
         const updateActiveScreen = () => {
@@ -194,7 +194,12 @@ function useSmoothSections({
         }
 
         rebuildSnapPoints()
-        updateActiveScreen()
+
+        const initialFrame =
+            window.requestAnimationFrame(() => {
+                setScreens(screenInfo)
+                updateActiveScreen()
+            })
 
         const handleLayoutChange = () => {
             removeSnapPoints.forEach((remove) => {
@@ -235,6 +240,10 @@ function useSmoothSections({
         })
 
         return () => {
+            window.cancelAnimationFrame(
+                initialFrame,
+            )
+
             resizeObserver.disconnect()
 
             removeSnapPoints.forEach((remove) => {
