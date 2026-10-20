@@ -51,6 +51,17 @@ function HomePage() {
           </a>
 
           <a
+            href="#services"
+            className={
+              activeScreen.id === 'services'
+                ? 'active'
+                : undefined
+            }
+          >
+            Services
+          </a>
+
+          <a
             href="#team"
             className={
               activeScreen.id === 'team'
@@ -225,6 +236,146 @@ function HomePage() {
         </section>
 
         <section
+          id="services"
+          className="home-section home-services"
+        >
+          <div className="home-section__heading">
+            <p>03 / SERVICES</p>
+
+            <h2>Services</h2>
+
+            <p className="home-section__intro">
+              Have an idea, feature, bug, or application
+              you want built? Send over what you need and
+              we can talk through whether it is a good fit,
+              what would be involved, and what it may cost.
+            </p>
+          </div>
+
+          <div className="home-services__content">
+            <div className="home-services__grid">
+              <article className="home-service-card">
+                <span className="home-service-card__number">
+                  01
+                </span>
+
+                <h3>Web Development</h3>
+
+                <p>
+                  React and TypeScript applications,
+                  interfaces, APIs, authentication,
+                  integrations, and custom software.
+                </p>
+
+                <span className="home-service-card__price">
+                  PRICE / BASED ON SCOPE
+                </span>
+              </article>
+
+              <article className="home-service-card">
+                <span className="home-service-card__number">
+                  02
+                </span>
+
+                <h3>Features & Fixes</h3>
+
+                <p>
+                  Smaller additions, bug fixes,
+                  improvements, integrations, or changes
+                  to an existing application.
+                </p>
+
+                <span className="home-service-card__price">
+                  SMALL PROJECTS / LOWER COST
+                </span>
+              </article>
+
+              <article className="home-service-card">
+                <span className="home-service-card__number">
+                  03
+                </span>
+
+                <h3>Game Systems</h3>
+
+                <p>
+                  Unity and C# gameplay systems,
+                  architecture, inventory, interaction,
+                  combat, persistence, and related tools.
+                </p>
+
+                <span className="home-service-card__price">
+                  PRICE / BASED ON COMPLEXITY
+                </span>
+              </article>
+            </div>
+
+            <div className="home-services__inquiry">
+              <div>
+                <p className="home-services__label">
+                  NOT SURE IF IT IS DOABLE?
+                </p>
+
+                <p className="home-services__inquiry-text">
+                  Send a description of what you want.
+                  There is no need to know the technical
+                  details first. We can discuss the idea,
+                  expected work, possible approaches, and
+                  a rough price before anything is started.
+                </p>
+              </div>
+
+              <div className="home-services__contact-options">
+                <div>
+                  <span>CASUAL</span>
+                  <strong>Discord</strong>
+                  <p>
+                    Good for talking through an idea,
+                    asking questions, or figuring out the
+                    scope informally.
+                  </p>
+                </div>
+
+                <div>
+                  <span>PROFESSIONAL</span>
+                  <strong>Email / Upwork</strong>
+                  <p>
+                    Better for formal project details,
+                    quotes, files, timelines, and paid work.
+                  </p>
+                </div>
+              </div>
+
+              <div className="home-services__actions">
+                <a
+                  href="mailto:rubenbecerril.rb@gmail.com"
+                  className="home-button home-button--primary"
+                >
+                  Email Project Idea
+                </a>
+
+                <a
+                  href="https://www.upwork.com/freelancers/~01a4fd3e41986f7dba"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="home-button"
+                >
+                  Upwork Profile
+                </a>
+
+                <a
+                  href="https://www.upwork.com/services/product/development-it-a-custom-react-and-typescript-web-application-2110490046871661907?ref=fl_profile"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="home-button"
+                >
+                  Upwork Services & Prices
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
           id="team"
           className="home-section home-team"
         >
@@ -388,7 +539,7 @@ function HomePage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Services & Pricing
+                Upwork Services & Prices
               </a>
             </div>
           </div>

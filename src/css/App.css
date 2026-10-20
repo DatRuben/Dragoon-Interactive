@@ -1581,3 +1581,141 @@ article p {
 .home-contact__links a:hover {
   color: var(--text);
 }
+
+.home-services__content {
+  display: grid;
+  gap: 36px;
+}
+
+.home-services__grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.home-service-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 280px;
+  padding: 24px;
+
+  border: none;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.home-service-card__number {
+  color: var(--accent);
+
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.home-service-card h3 {
+  margin: 32px 0 18px;
+
+  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+}
+
+.home-service-card p {
+  flex: 1;
+
+  color: var(--text-muted);
+
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.home-service-card__price {
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--text-muted);
+
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.home-services__inquiry {
+  padding: 28px;
+
+  border: 1px solid var(--border);
+}
+
+.home-services__label {
+  margin-bottom: 12px;
+
+  color: var(--accent);
+
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.home-services__inquiry-text {
+  max-width: 760px;
+
+  color: var(--text);
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.home-services__contact-options {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
+
+  margin-top: 30px;
+  padding-top: 28px;
+
+  border-top: 1px solid var(--border);
+}
+
+.home-services__contact-options span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--accent);
+
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+}
+
+.home-services__contact-options strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: 400;
+}
+
+.home-services__contact-options p {
+  max-width: 420px;
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.home-services__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 30px;
+}

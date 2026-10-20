@@ -245,7 +245,7 @@ function RubenSummary() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Services & Pricing
+                  Upwork Services & Prices
                 </a>
 
                 <a
