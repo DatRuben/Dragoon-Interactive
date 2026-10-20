@@ -233,6 +233,22 @@ function RubenSummary() {
                 </a>
 
                 <a
+                  href="https://www.upwork.com/freelancers/~01a4fd3e41986f7dba"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Upwork Profile
+                </a>
+
+                <a
+                  href="https://www.upwork.com/services/product/development-it-a-custom-react-and-typescript-web-application-2110490046871661907?ref=fl_profile"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Services & Pricing
+                </a>
+
+                <a
                   href="/Becerril_Ruben_10-12-2026.pdf"
                   target="_blank"
                   rel="noreferrer"
