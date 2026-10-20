@@ -1476,16 +1476,6 @@ article p {
   line-height: 1.7;
 }
 
-.home-contact__email {
-  display: inline-block;
-
-  margin: 24px 0 42px;
-
-  color: var(--text);
-
-  font-size: clamp(1.3rem, 2.5vw, 2.5rem);
-}
-
 .home-contact__links {
   display: flex;
   flex-wrap: wrap;
@@ -1799,10 +1789,6 @@ article p {
 
   .home-team-card__action {
     grid-column: 2;
-  }
-
-  .home-contact__email {
-    overflow-wrap: anywhere;
   }
 
   .portfolio-page {
