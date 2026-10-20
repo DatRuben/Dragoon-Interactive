@@ -24,7 +24,7 @@ const projects: PortfolioProject[] = [
     media: [
       {
         type: 'video',
-        src: '/project-media/kanban-demo.mp4',
+        src: '/project-media/dats-better-kanban/kanban-demo.mp4',
         alt: "Dat's Better Kanban demonstration video",
       },
       {
