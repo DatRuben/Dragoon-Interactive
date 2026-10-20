@@ -134,14 +134,26 @@ function useSmoothSections({
             anchors: true,
         })
 
-        const snap = new Snap(lenis, {
-            type: 'lock',
-            distanceThreshold: '100%',
-            debounce: 0,
-            duration: 1.05,
-            easing: (t) =>
-                1 - Math.pow(1 - t, 4),
-        })
+        const mobileLayout = window.matchMedia(
+            '(max-width: 900px)',
+        )
+
+        const createSnap = () => {
+            if (mobileLayout.matches) {
+                return null
+            }
+
+            return new Snap(lenis, {
+                type: 'lock',
+                distanceThreshold: '100%',
+                debounce: 0,
+                duration: 1.05,
+                easing: (t) =>
+                    1 - Math.pow(1 - t, 4),
+            })
+        }
+
+        let snap = createSnap()
 
         let removeSnapPoints: Array<() => void> = []
 
@@ -166,9 +178,15 @@ function useSmoothSections({
                 remove()
             })
 
+            removeSnapPoints = []
+
+            if (!snap) {
+                return
+            }
+
             removeSnapPoints = sections.map(
                 (section) => {
-                    return snap.add(
+                    return snap!.add(
                         getLocalSectionTop(section),
                     )
                 },
@@ -177,6 +195,24 @@ function useSmoothSections({
 
         rebuildSnapPoints()
         updateActiveScreen()
+
+        const handleLayoutChange = () => {
+            removeSnapPoints.forEach((remove) => {
+                remove()
+            })
+
+            removeSnapPoints = []
+
+            snap?.destroy()
+            snap = createSnap()
+
+            rebuildSnapPoints()
+        }
+
+        mobileLayout.addEventListener(
+            'change',
+            handleLayoutChange,
+        )
 
         wrapper.addEventListener(
             'scroll',
@@ -210,7 +246,12 @@ function useSmoothSections({
                 updateActiveScreen,
             )
 
-            snap.destroy()
+            mobileLayout.removeEventListener(
+                'change',
+                handleLayoutChange,
+            )
+
+            snap?.destroy()
             lenis.destroy()
         }
     }, [

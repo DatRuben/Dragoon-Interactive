@@ -380,7 +380,7 @@ function HomePage() {
           className="home-section home-team"
         >
           <div className="home-section__heading">
-            <p>03 / TEAM</p>
+            <p>04 / TEAM</p>
             <h2>Team</h2>
 
             <p className="home-section__intro">
@@ -433,7 +433,7 @@ function HomePage() {
           className="home-section home-about"
         >
           <div className="home-section__heading">
-            <p>04 / ABOUT</p>
+            <p>05 / ABOUT</p>
             <h2>
               About
               <br />
@@ -482,7 +482,7 @@ function HomePage() {
           className="home-section home-contact"
         >
           <div>
-            <p>05 / CONTACT</p>
+            <p>06 / CONTACT</p>
 
             <h2>
               Let's build
