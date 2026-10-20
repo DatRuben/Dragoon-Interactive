@@ -1,11 +1,19 @@
+import type {
+  ExperienceMode,
+} from '../types/portfolio'
+
 type ExperienceHeaderProps = {
-  activeType: string
+  activeType: ExperienceMode
   visible: boolean
+  onTypeChange: (
+    type: ExperienceMode,
+  ) => void
 }
 
 function ExperienceHeader({
   activeType,
   visible,
+  onTypeChange,
 }: ExperienceHeaderProps) {
   return (
     <div
@@ -23,27 +31,39 @@ function ExperienceHeader({
         className="experience-mini-nav"
         aria-label="Experience navigation"
       >
-        <a
-          href="#experience"
+        <button
+          type="button"
           className={
             activeType === 'development'
               ? 'active'
               : undefined
           }
+          aria-pressed={
+            activeType === 'development'
+          }
+          onClick={() =>
+            onTypeChange('development')
+          }
         >
           Development Experience
-        </a>
+        </button>
 
-        <a
-          href="#work-experience"
+        <button
+          type="button"
           className={
             activeType === 'work'
               ? 'active'
               : undefined
           }
+          aria-pressed={
+            activeType === 'work'
+          }
+          onClick={() =>
+            onTypeChange('work')
+          }
         >
           Work Experience
-        </a>
+        </button>
       </nav>
     </div>
   )

@@ -4,8 +4,36 @@ import PortfolioHeader from '../components/PortfolioHeader'
 import WorkExperience from '../components/WorkExperience'
 import useSmoothSections from '../hooks/useSmoothSections'
 import PortfolioScrollIndicator from '../components/PortfolioScrollIndicator'
+import { useState } from 'react'
+import type {
+  ExperienceMode,
+} from '../types/portfolio'
 
 function RubenSummary() {
+  const [
+    experienceMode,
+    setExperienceMode,
+  ] = useState<ExperienceMode>(
+    'development',
+  )
+
+  const changeExperienceMode = (
+    mode: ExperienceMode,
+  ) => {
+    setExperienceMode(mode)
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        document
+          .getElementById('experience')
+          ?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+      })
+    })
+  }
+
   const {
     activeScreen,
     screens,
@@ -13,6 +41,7 @@ function RubenSummary() {
     wrapperSelector: '.portfolio-scroll',
     contentSelector: '.portfolio-main',
     sectionSelector: '[data-scroll-screen]',
+    refreshKey: experienceMode,
   })
 
   return (
@@ -27,14 +56,17 @@ function RubenSummary() {
         visible={
           activeScreen.navSection === 'experience'
         }
-        activeType={
-          activeScreen.experienceType
-        }
+        activeType={experienceMode}
+        onTypeChange={changeExperienceMode}
       />
 
       <PortfolioScrollIndicator
         screens={screens}
         activeScreenId={activeScreen.id}
+        experienceMode={experienceMode}
+        onExperienceModeChange={
+          changeExperienceMode
+        }
       />
 
       <div className="portfolio-scroll">
@@ -124,9 +156,11 @@ function RubenSummary() {
             </aside>
           </section>
 
-          <DevelopmentExperience />
-
-          <WorkExperience />
+          {experienceMode === 'development' ? (
+            <DevelopmentExperience />
+          ) : (
+            <WorkExperience />
+          )}
 
           <section
             id="info"

@@ -303,17 +303,25 @@ article p {
   gap: 36px;
 }
 
-.experience-mini-nav a {
+.experience-mini-nav button {
   position: relative;
 
-  color: #626b7a;
+  padding: 0;
 
+  border: none;
+
+  color: #626b7a;
+  background: transparent;
+
+  font: inherit;
   font-size: 0.95rem;
+
+  cursor: pointer;
 
   transition: color 0.2s ease;
 }
 
-.experience-mini-nav a::after {
+.experience-mini-nav button::after {
   position: absolute;
   right: 0;
   bottom: -10px;
@@ -335,8 +343,8 @@ article p {
   color: #111318;
 }
 
-.experience-mini-nav a:hover::after,
-.experience-mini-nav a.active::after {
+.experience-mini-nav button:hover,
+.experience-mini-nav button.active {
   transform: scaleX(1);
 }
 
@@ -1121,11 +1129,20 @@ article p {
 
 .content-rail__group-title {
   min-height: 26px;
+  padding: 0;
+
+  border: none;
+
+  color: inherit;
+  background: transparent;
 
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.06em;
+  text-align: left;
   text-transform: uppercase;
+
+  cursor: pointer;
 }
 
 .content-rail__group-title i {
@@ -1910,7 +1927,7 @@ article p {
     gap: 14px;
   }
 
-  .experience-mini-nav a {
+  .experience-mini-nav button {
     font-size: 0.78rem;
   }
 

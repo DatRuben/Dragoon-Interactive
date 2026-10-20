@@ -22,49 +22,69 @@ const workExperience = [
 function WorkExperience() {
     return (
         <>
-            {workExperience.map((experience, index) => (
-                <section
-                    key={experience.id}
-                    id={
-                        index === 0
-                            ? 'work-experience'
-                            : `work-${experience.id}`
-                    }
-                    className="experience-screen work-screen"
-                    data-scroll-screen
-                    data-scroll-label={experience.company}
-                    data-scroll-group="Work Experience"
-                    data-scroll-subtitle={experience.role}
-                    data-nav-section="experience"
-                    data-experience-type="work"
-                >
-                    <div className="work-screen__content">
-                        <p className="experience-screen__index">
-                            {String(index + 1).padStart(2, '0')}
-                            {' / '}
-                            {String(workExperience.length).padStart(2, '0')}
-                        </p>
+            {workExperience.map(
+                (experience, index) => (
+                    <section
+                        key={experience.id}
+                        id={
+                            index === 0
+                                ? 'experience'
+                                : `experience-work-${experience.id}`
+                        }
+                        className="experience-screen work-screen"
+                        data-scroll-screen
+                        data-scroll-label={
+                            experience.company
+                        }
+                        data-scroll-group="Work Experience"
+                        data-scroll-subtitle={
+                            experience.role
+                        }
+                        data-nav-section="experience"
+                        data-experience-type="work"
+                    >
+                        <div className="work-screen__content">
+                            <p className="experience-screen__index">
+                                {String(
+                                    index + 1,
+                                ).padStart(
+                                    2,
+                                    '0',
+                                )}
+                                {' / '}
+                                {String(
+                                    workExperience.length,
+                                ).padStart(
+                                    2,
+                                    '0',
+                                )}
+                            </p>
 
-                        <p className="work-screen__dates">
-                            {experience.dates}
-                        </p>
+                            <p className="work-screen__dates">
+                                {experience.dates}
+                            </p>
 
-                        <h2>{experience.role}</h2>
+                            <h2>
+                                {experience.role}
+                            </h2>
 
-                        <p className="work-screen__company">
-                            {experience.company}
-                        </p>
+                            <p className="work-screen__company">
+                                {experience.company}
+                            </p>
 
-                        <p className="work-screen__location">
-                            {experience.location}
-                        </p>
+                            <p className="work-screen__location">
+                                {experience.location}
+                            </p>
 
-                        <p className="work-screen__description">
-                            {experience.description}
-                        </p>
-                    </div>
-                </section>
-            ))}
+                            <p className="work-screen__description">
+                                {
+                                    experience.description
+                                }
+                            </p>
+                        </div>
+                    </section>
+                ),
+            )}
         </>
     )
 }

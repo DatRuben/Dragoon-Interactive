@@ -7,6 +7,7 @@ type SmoothSectionsOptions = {
     wrapperSelector: string
     contentSelector: string
     sectionSelector: string
+    refreshKey?: string
 }
 
 export type ScrollScreenInfo = {
@@ -26,6 +27,7 @@ function useSmoothSections({
     wrapperSelector,
     contentSelector,
     sectionSelector,
+    refreshKey,
 }: SmoothSectionsOptions) {
     const [activeScreen, setActiveScreen] =
         useState<ActiveScrollScreen>({
@@ -267,6 +269,7 @@ function useSmoothSections({
         wrapperSelector,
         contentSelector,
         sectionSelector,
+        refreshKey,
     ])
 
     return {

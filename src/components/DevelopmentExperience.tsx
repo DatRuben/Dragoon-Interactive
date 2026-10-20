@@ -67,24 +67,6 @@ const projects: PortfolioProject[] = [
     ],
     media: [],
   },
-  {
-    id: 'tea-shop-manager',
-    title: 'Tea Shop Manager',
-    type: 'solo',
-    tech: [
-      'Unity',
-      'C#',
-    ],
-    description:
-      'A Unity management game built around operating and progressing a tea shop through customer demand, inventory decisions, upgrades, and performance goals.',
-    highlights: [
-      'Inventory and recipe management',
-      'Customer preferences and shop upgrades',
-      'Day progression, money, and goal systems',
-      'Scoring and persistent high scores',
-    ],
-    media: [],
-  },
 ]
 
 function DevelopmentExperience() {

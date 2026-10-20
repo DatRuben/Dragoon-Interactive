@@ -4,6 +4,10 @@ export type PortfolioMedia = {
   alt: string
 }
 
+export type ExperienceMode =
+  | 'development'
+  | 'work'
+
 export type PortfolioProject = {
   id: string
   title: string

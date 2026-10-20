@@ -2,14 +2,24 @@ import type {
   ScrollScreenInfo,
 } from '../hooks/useSmoothSections'
 
+import type {
+  ExperienceMode,
+} from '../types/portfolio'
+
 type PortfolioScrollIndicatorProps = {
   screens: ScrollScreenInfo[]
   activeScreenId: string
+  experienceMode: ExperienceMode
+  onExperienceModeChange: (
+    mode: ExperienceMode,
+  ) => void
 }
 
 function PortfolioScrollIndicator({
   screens,
   activeScreenId,
+  experienceMode,
+  onExperienceModeChange,
 }: PortfolioScrollIndicatorProps) {
   if (screens.length === 0) {
     return null
@@ -55,13 +65,6 @@ function PortfolioScrollIndicator({
   const experienceIsActive =
     activeScreen.navSection === 'experience'
 
-  const developmentIsActive =
-    activeScreen.experienceType ===
-    'development'
-
-  const workIsActive =
-    activeScreen.experienceType === 'work'
-
   return (
     <aside
       className="portfolio-content-rail"
@@ -101,24 +104,32 @@ function PortfolioScrollIndicator({
       )}
 
       <div className="content-rail__experience">
-        <a
-          href="#experience"
+        <button
+          type="button"
           className={
-            experienceIsActive
-              ? 'content-rail__main content-rail__main--active'
-              : 'content-rail__main'
+            experienceMode === 'development'
+              ? 'content-rail__group-title content-rail__group-title--active'
+              : 'content-rail__group-title'
+          }
+          aria-pressed={
+            experienceMode === 'development'
+          }
+          onClick={() =>
+            onExperienceModeChange(
+              'development',
+            )
           }
         >
           <span className="content-rail__number">
-            02
+            01
           </span>
 
           <span className="content-rail__title">
-            Experience
+            Development
           </span>
 
           <i />
-        </a>
+        </button>
 
         <div className="content-rail__nested">
           <div className="content-rail__group">
@@ -141,40 +152,50 @@ function PortfolioScrollIndicator({
               <i />
             </a>
 
-            <div className="content-rail__children">
-              {developmentScreens.map(
-                (screen, index) => (
-                  <a
-                    key={screen.id}
-                    href={`#${screen.id}`}
-                    className={
-                      screen.id === activeScreen.id
-                        ? 'content-rail__child content-rail__child--active'
-                        : 'content-rail__child'
-                    }
-                  >
-                    <span className="content-rail__number">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
+            {experienceMode === 'development' && (
+              <div className="content-rail__children">
+                {developmentScreens.map(
+                  (screen, index) => (
+                    <a
+                      key={screen.id}
+                      href={`#${screen.id}`}
+                      className={
+                        screen.id === activeScreen.id
+                          ? 'content-rail__child content-rail__child--active'
+                          : 'content-rail__child'
+                      }
+                    >
+                      <span className="content-rail__number">
+                        {String(
+                          index + 1,
+                        ).padStart(2, '0')}
+                      </span>
 
-                    <span className="content-rail__title">
-                      {screen.label}
-                    </span>
+                      <span className="content-rail__title">
+                        {screen.label}
+                      </span>
 
-                    <i />
-                  </a>
-                ),
-              )}
-            </div>
+                      <i />
+                    </a>
+                  ),
+                )}
+              </div>
+            )}
           </div>
 
           <div className="content-rail__group">
-            <a
-              href="#work-experience"
+            <button
+              type="button"
               className={
-                workIsActive
+                experienceMode === 'work'
                   ? 'content-rail__group-title content-rail__group-title--active'
                   : 'content-rail__group-title'
+              }
+              aria-pressed={
+                experienceMode === 'work'
+              }
+              onClick={() =>
+                onExperienceModeChange('work')
               }
             >
               <span className="content-rail__number">
@@ -186,33 +207,37 @@ function PortfolioScrollIndicator({
               </span>
 
               <i />
-            </a>
+            </button>
 
-            <div className="content-rail__children">
-              {workScreens.map(
-                (screen, index) => (
-                  <a
-                    key={screen.id}
-                    href={`#${screen.id}`}
-                    className={
-                      screen.id === activeScreen.id
-                        ? 'content-rail__child content-rail__child--active'
-                        : 'content-rail__child'
-                    }
-                  >
-                    <span className="content-rail__number">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
+            {experienceMode === 'work' && (
+              <div className="content-rail__children">
+                {workScreens.map(
+                  (screen, index) => (
+                    <a
+                      key={screen.id}
+                      href={`#${screen.id}`}
+                      className={
+                        screen.id === activeScreen.id
+                          ? 'content-rail__child content-rail__child--active'
+                          : 'content-rail__child'
+                      }
+                    >
+                      <span className="content-rail__number">
+                        {String(
+                          index + 1,
+                        ).padStart(2, '0')}
+                      </span>
 
-                    <span className="content-rail__title">
-                      {screen.label}
-                    </span>
+                      <span className="content-rail__title">
+                        {screen.label}
+                      </span>
 
-                    <i />
-                  </a>
-                ),
-              )}
-            </div>
+                      <i />
+                    </a>
+                  ),
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
