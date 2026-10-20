@@ -1,5 +1,11 @@
-import { useState } from 'react'
-import type { PortfolioProject } from '../types/portfolio'
+import {
+  useRef,
+  useState,
+} from 'react'
+
+import type {
+  PortfolioProject,
+} from '../types/portfolio'
 
 type PortfolioProjectFeatureProps = {
   project: PortfolioProject
@@ -8,33 +14,55 @@ type PortfolioProjectFeatureProps = {
 function PortfolioProjectFeature({
   project,
 }: PortfolioProjectFeatureProps) {
-  const [activeMediaIndex, setActiveMediaIndex] =
-    useState(0)
+  const [
+    activeMediaIndex,
+    setActiveMediaIndex,
+  ] = useState(0)
+
+  const [
+    videoPlaying,
+    setVideoPlaying,
+  ] = useState(false)
+
+  const videoRef =
+    useRef<HTMLVideoElement | null>(null)
 
   const activeMedia =
     project.media[activeMediaIndex]
 
   const showPreviousMedia = () => {
-    setActiveMediaIndex((currentIndex) => {
-      if (currentIndex === 0) {
-        return project.media.length - 1
-      }
+    setVideoPlaying(false)
 
-      return currentIndex - 1
-    })
+    setActiveMediaIndex(
+      (currentIndex) => {
+        if (currentIndex === 0) {
+          return project.media.length - 1
+        }
+
+        return currentIndex - 1
+      },
+    )
   }
 
   const showNextMedia = () => {
-    setActiveMediaIndex((currentIndex) => {
-      if (
-        currentIndex ===
-        project.media.length - 1
-      ) {
-        return 0
-      }
+    setVideoPlaying(false)
 
-      return currentIndex + 1
-    })
+    setActiveMediaIndex(
+      (currentIndex) => {
+        if (
+          currentIndex ===
+          project.media.length - 1
+        ) {
+          return 0
+        }
+
+        return currentIndex + 1
+      },
+    )
+  }
+
+  const playVideo = () => {
+    void videoRef.current?.play()
   }
 
   return (
@@ -42,44 +70,102 @@ function PortfolioProjectFeature({
       <div className="portfolio-project__media">
         {activeMedia ? (
           <>
-            {activeMedia.type === 'image' ? (
-              <img
-                src={activeMedia.src}
-                alt={activeMedia.alt}
-              />
-            ) : (
-              <video
-                src={activeMedia.src}
-                controls
-                preload="metadata"
-              />
-            )}
+            <div className="portfolio-project__media-stage">
+              {activeMedia.type ===
+              'image' ? (
+                <img
+                  src={activeMedia.src}
+                  alt={activeMedia.alt}
+                />
+              ) : (
+                <>
+                  <video
+                    key={activeMedia.src}
+                    ref={videoRef}
+                    src={activeMedia.src}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    onPlay={() =>
+                      setVideoPlaying(true)
+                    }
+                    onPause={() =>
+                      setVideoPlaying(false)
+                    }
+                    onEnded={() =>
+                      setVideoPlaying(false)
+                    }
+                  />
 
-            {project.media.length > 1 && (
-              <div className="portfolio-project__media-controls">
+                  {!videoPlaying && (
+                    <button
+                      type="button"
+                      className="portfolio-project__video-play"
+                      onClick={playVideo}
+                      aria-label="Play project video"
+                    >
+                      <span aria-hidden="true">
+                        ▶
+                      </span>
+
+                      <span>Play Video</span>
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
+
+            <div className="portfolio-project__media-controls">
+              {project.media.length > 1 ? (
                 <button
                   type="button"
-                  onClick={showPreviousMedia}
+                  onClick={
+                    showPreviousMedia
+                  }
                   aria-label="Previous project media"
                 >
-                  ←
+                  ← Previous
                 </button>
+              ) : (
+                <span />
+              )}
 
+              <div className="portfolio-project__media-status">
                 <span>
+                  {activeMedia.type ===
+                  'video'
+                    ? 'VIDEO'
+                    : 'IMAGE'}
+                </span>
+
+                <strong>
                   {activeMediaIndex + 1}
                   {' / '}
                   {project.media.length}
-                </span>
+                </strong>
 
+                {activeMedia.type ===
+                  'video' && (
+                  <span>
+                    {videoPlaying
+                      ? 'PLAYING'
+                      : 'PAUSED'}
+                  </span>
+                )}
+              </div>
+
+              {project.media.length > 1 ? (
                 <button
                   type="button"
                   onClick={showNextMedia}
                   aria-label="Next project media"
                 >
-                  →
+                  Next →
                 </button>
-              </div>
-            )}
+              ) : (
+                <span />
+              )}
+            </div>
           </>
         ) : (
           <div className="portfolio-project__media-empty">
@@ -135,11 +221,13 @@ function PortfolioProjectFeature({
               </p>
 
               <div className="portfolio-project__team">
-                {project.members.map((member) => (
-                  <span key={member}>
-                    {member}
-                  </span>
-                ))}
+                {project.members.map(
+                  (member) => (
+                    <span key={member}>
+                      {member}
+                    </span>
+                  ),
+                )}
               </div>
             </div>
           )}
