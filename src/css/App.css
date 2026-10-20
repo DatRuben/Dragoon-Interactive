@@ -338,13 +338,13 @@ article p {
   transition: transform 0.2s ease;
 }
 
-.experience-mini-nav a:hover,
-.experience-mini-nav a.active {
+.experience-mini-nav button:hover,
+.experience-mini-nav button.active {
   color: #111318;
 }
 
-.experience-mini-nav button:hover,
-.experience-mini-nav button.active {
+.experience-mini-nav button:hover::after,
+.experience-mini-nav button.active::after {
   transform: scaleX(1);
 }
 
@@ -1133,7 +1133,6 @@ article p {
 
   border: none;
 
-  color: inherit;
   background: transparent;
 
   font-family: var(--font-mono);
