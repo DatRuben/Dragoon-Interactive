@@ -327,11 +327,13 @@ function HomePage() {
               <div className="home-services__contact-options">
                 <div>
                   <span>CASUAL</span>
-                  <strong>Discord</strong>
+                  <strong>Discord / Casual Chat</strong>
+
                   <p>
                     Good for talking through an idea,
                     asking questions, or figuring out the
-                    scope informally.
+                    scope informally. We can move to Discord
+                    after initial contact.
                   </p>
                 </div>
 

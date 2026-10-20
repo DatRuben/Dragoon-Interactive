@@ -2115,3 +2115,9 @@ article p {
 .home-team-card--link:hover .home-team-card__action {
   border-color: var(--accent);
 }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
