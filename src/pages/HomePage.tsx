@@ -12,12 +12,12 @@ function HomePage() {
     <div className="home-page">
       <header className="site-header">
         <a className="brand" href="#home">
-          <span
-            className="brand-mark"
+          <img
+            className="brand-logo"
+            src="/dragooninteractiveLogo.png"
+            alt=""
             aria-hidden="true"
-          >
-            DI
-          </span>
+          />
 
           <span className="brand-name">
             Dragoon Interactive

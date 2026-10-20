@@ -214,25 +214,6 @@ article p {
   text-transform: uppercase;
 }
 
-@media (max-width: 700px) {
-  nav {
-    padding: 0 20px;
-  }
-
-  nav div {
-    gap: 14px;
-  }
-
-  nav div a {
-    font-size: 0.65rem;
-  }
-
-  section {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-}
-
 .home-page {
   height: 100vh;
 
@@ -1067,9 +1048,7 @@ article p {
 
   color: #8a9099;
 
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .content-rail__main i,
@@ -1223,7 +1202,6 @@ article p {
 
 .content-rail__child--active {
   color: #111318;
-  transform: translateX(-4px);
 }
 
 .content-rail__child--active i {
@@ -1800,6 +1778,11 @@ article p {
     font-size: 1rem;
   }
 
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
   .site-nav {
     gap: 16px;
 
@@ -2070,4 +2053,11 @@ article p {
   .portfolio-info__block {
     min-height: auto;
   }
+}
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
 }
