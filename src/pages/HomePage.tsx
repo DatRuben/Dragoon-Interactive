@@ -342,8 +342,9 @@ function HomePage() {
 
           <div className="home-contact__content">
             <p>
-              For software development,
-              collaboration, or project inquiries:
+              Available for software development,
+              freelance projects, collaboration,
+              and project inquiries.
             </p>
 
             <a
@@ -372,6 +373,22 @@ function HomePage() {
                 rel="noreferrer"
               >
                 LinkedIn
+              </a>
+
+              <a
+                href="https://www.upwork.com/freelancers/~01a4fd3e41986f7dba"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Upwork Profile
+              </a>
+
+              <a
+                href="https://www.upwork.com/services/product/development-it-a-custom-react-and-typescript-web-application-2110490046871661907?ref=fl_profile"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Services & Pricing
               </a>
             </div>
           </div>
