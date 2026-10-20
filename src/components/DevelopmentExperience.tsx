@@ -21,7 +21,38 @@ const projects: PortfolioProject[] = [
       'Image, video, and interactive 3D attachments',
       'Self-hosted HTTPS production deployment',
     ],
-    media: [],
+    media: [
+      {
+        type: 'video',
+        src: '/project-media/kanban-demo.mp4',
+        alt: "Dat's Better Kanban demonstration video",
+      },
+      {
+        type: 'image',
+        src: '/project-media/dats-better-kanban/Image1.png',
+        alt: "Dat's Better Kanban screenshot 1",
+      },
+      {
+        type: 'image',
+        src: '/project-media/dats-better-kanban/Image2.png',
+        alt: "Dat's Better Kanban screenshot 2",
+      },
+      {
+        type: 'image',
+        src: '/project-media/dats-better-kanban/Image3.png',
+        alt: "Dat's Better Kanban screenshot 3",
+      },
+      {
+        type: 'image',
+        src: '/project-media/dats-better-kanban/Image4.png',
+        alt: "Dat's Better Kanban screenshot 4",
+      },
+      {
+        type: 'image',
+        src: '/project-media/dats-better-kanban/Image5.png',
+        alt: "Dat's Better Kanban screenshot 5",
+      },
+    ],
   },
   {
     id: 'story-game',
