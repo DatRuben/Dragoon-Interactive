@@ -295,12 +295,12 @@ function HomePage() {
                   03
                 </span>
 
-                <h3>Game Systems</h3>
+                <h3>Unity Game Development</h3>
 
                 <p>
-                  Unity and C# gameplay systems,
-                  architecture, inventory, interaction,
-                  combat, persistence, and related tools.
+                  Unity and C# gameplay development including
+                  architecture, inventory, interaction, combat,
+                  persistence, and related gameplay systems.
                 </p>
 
                 <span className="home-service-card__price">

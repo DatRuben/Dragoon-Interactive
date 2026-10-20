@@ -69,7 +69,7 @@ function RubenSummary() {
 
                 <div>
                   <span>02</span>
-                  <p>Game Systems</p>
+                  <p>Unity Game Development</p>
                 </div>
 
                 <div>

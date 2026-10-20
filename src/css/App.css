@@ -1757,6 +1757,13 @@ article p {
   }
 }
 
+.brand-logo {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+}
+
 @media (max-width: 900px) {
   .site-header {
     position: sticky;
@@ -2053,11 +2060,4 @@ article p {
   .portfolio-info__block {
     min-height: auto;
   }
-}
-
-.brand-logo {
-  width: 52px;
-  height: 52px;
-
-  object-fit: contain;
 }
