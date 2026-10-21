@@ -76,7 +76,13 @@ const projects: PortfolioProject[] = [
       'Centralized gameplay-state restrictions',
       'Combat skills and resource systems',
     ],
-    media: [],
+    media: [
+      {
+        type: 'image',
+        src: '/project-media/story-game/StoryGameDevScene.png',
+        alt: 'Story Game development scene',
+      },
+    ],
   },
   {
     id: 'dragoon-interactive',
