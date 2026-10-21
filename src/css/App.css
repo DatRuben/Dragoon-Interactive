@@ -810,6 +810,21 @@ article p {
   line-height: 1.7;
 }
 
+.portfolio-project__media-caption {
+  min-height: 44px;
+  padding: 12px 16px;
+
+  border-top: 1px solid #30343b;
+
+  color: #d6d9df;
+  background: #17191e;
+
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
 .portfolio-project__video-play {
   position: absolute;
   top: 50%;
@@ -2078,6 +2093,13 @@ article p {
 @media (max-width: 600px) {
   .brand-name {
     display: none;
+  }
+
+  .portfolio-project__media-caption {
+    min-height: 40px;
+    padding: 10px;
+
+    font-size: 0.64rem;
   }
 
   .portfolio-summary__focus {

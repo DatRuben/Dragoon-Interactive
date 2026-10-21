@@ -137,6 +137,10 @@ function PortfolioProjectFeature({
                 )}
               </div>
 
+              <div className="portfolio-project__media-caption">
+                {activeMedia.caption}
+              </div>
+
               <div className="portfolio-project__media-controls">
                 {project.media.length > 1 ? (
                   <button
@@ -168,12 +172,12 @@ function PortfolioProjectFeature({
 
                   {activeMedia.type ===
                     'video' && (
-                      <span>
-                        {videoPlaying
-                          ? 'PLAYING'
-                          : 'PAUSED'}
-                      </span>
-                    )}
+                    <span>
+                      {videoPlaying
+                        ? 'PLAYING'
+                        : 'PAUSED'}
+                    </span>
+                  )}
                 </div>
 
                 {project.media.length > 1 ? (

@@ -26,31 +26,43 @@ const projects: PortfolioProject[] = [
         type: 'video',
         src: '/project-media/dats-better-kanban/kanban-demo.mp4',
         alt: "Dat's Better Kanban demonstration video",
+        caption:
+          "Dat's: Better Kanban application walkthrough",
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image1.png',
         alt: "Dat's Better Kanban screenshot 1",
+        caption:
+          "Dat's: Better Kanban interface screenshot",
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image2.png',
         alt: "Dat's Better Kanban screenshot 2",
+        caption:
+          "Dat's: Better Kanban interface screenshot",
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image3.png',
         alt: "Dat's Better Kanban screenshot 3",
+        caption:
+          "Dat's: Better Kanban interface screenshot",
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image4.png',
         alt: "Dat's Better Kanban screenshot 4",
+        caption:
+          "Dat's: Better Kanban interface screenshot",
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image5.png',
         alt: "Dat's Better Kanban screenshot 5",
+        caption:
+          "Dat's: Better Kanban interface screenshot",
       },
     ],
   },
@@ -81,6 +93,8 @@ const projects: PortfolioProject[] = [
         type: 'image',
         src: '/project-media/story-game/StoryGameDevScene.png',
         alt: 'Story Game development scene',
+        caption:
+          'Development scene from the current Unity build',
       },
     ],
   },

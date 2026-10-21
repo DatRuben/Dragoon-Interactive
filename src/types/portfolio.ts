@@ -2,6 +2,7 @@ export type PortfolioMedia = {
   type: 'image' | 'video'
   src: string
   alt: string
+  caption: string
 }
 
 export type PortfolioPresentation =
