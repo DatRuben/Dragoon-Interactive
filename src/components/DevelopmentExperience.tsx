@@ -27,42 +27,42 @@ const projects: PortfolioProject[] = [
         src: '/project-media/dats-better-kanban/kanban-demo.mp4',
         alt: "Dat's Better Kanban demonstration video",
         caption:
-          "Dat's: Better Kanban application walkthrough",
+          "Full Dat's: Better Kanban application demo",
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image1.png',
-        alt: "Dat's Better Kanban screenshot 1",
+        alt: "Dat's Better Kanban project connection screen",
         caption:
-          "Dat's: Better Kanban interface screenshot",
+          'Project start screen with demo mode and Google Drive connection',
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image2.png',
-        alt: "Dat's Better Kanban screenshot 2",
+        alt: "Dat's Better Kanban board view",
         caption:
-          "Dat's: Better Kanban interface screenshot",
+          'Custom Kanban board with priorities, tasks, assignees, and attachments',
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image3.png',
-        alt: "Dat's Better Kanban screenshot 3",
+        alt: "Dat's Better Kanban timeline view",
         caption:
-          "Dat's: Better Kanban interface screenshot",
+          'Timeline view for visualizing project tasks across the workflow',
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image4.png',
-        alt: "Dat's Better Kanban screenshot 4",
+        alt: "Dat's Better Kanban completed history view",
         caption:
-          "Dat's: Better Kanban interface screenshot",
+          'Completed History view showing previously finished work',
       },
       {
         type: 'image',
         src: '/project-media/dats-better-kanban/Image5.png',
-        alt: "Dat's Better Kanban screenshot 5",
+        alt: "Google Drive project folder used by Dat's Better Kanban",
         caption:
-          "Dat's: Better Kanban interface screenshot",
+          'User-owned Google Drive project storage used by the application',
       },
     ],
   },
@@ -92,9 +92,9 @@ const projects: PortfolioProject[] = [
       {
         type: 'image',
         src: '/project-media/story-game/StoryGameDevScene.png',
-        alt: 'Story Game development scene',
+        alt: 'Story Game Unity development scene with character and creature models',
         caption:
-          'Development scene from the current Unity build',
+          'Unity development scene with player and enemy',
       },
     ],
   },
