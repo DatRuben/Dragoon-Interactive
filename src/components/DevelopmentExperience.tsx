@@ -81,7 +81,7 @@ const projects: PortfolioProject[] = [
   {
     id: 'dragoon-interactive',
     title: 'Dragoon Interactive',
-    type: 'solo',
+    type: 'team',
     tech: [
       'React',
       'TypeScript',
