@@ -82,6 +82,7 @@ const projects: PortfolioProject[] = [
     id: 'dragoon-interactive',
     title: 'Dragoon Interactive',
     type: 'team',
+    presentation: 'current-site',
     tech: [
       'React',
       'TypeScript',
@@ -89,12 +90,12 @@ const projects: PortfolioProject[] = [
       'Lenis',
     ],
     description:
-      'A studio and portfolio website designed to present software, game development work, team members, and future Dragoon Interactive projects.',
+      'You are viewing Dragoon Interactive now. This site serves as the studio website and portfolio hub for our software and game development work.',
     highlights: [
-      'Reusable React and TypeScript portfolio architecture',
+      'Reusable React and TypeScript architecture',
       'Section-aware smooth scrolling and navigation',
-      'Hierarchical project and experience presentation',
-      'Responsive interface and self-hosted deployment',
+      'Responsive desktop and mobile layouts',
+      'Self-hosted production deployment',
     ],
     media: [],
   },

@@ -30,6 +30,9 @@ function PortfolioProjectFeature({
   const activeMedia =
     project.media[activeMediaIndex]
 
+  const presentation =
+    project.presentation ?? 'media'
+
   const showPreviousMedia = () => {
     setVideoPlaying(false)
 
@@ -67,119 +70,141 @@ function PortfolioProjectFeature({
 
   return (
     <article className="portfolio-project">
-      <div className="portfolio-project__media">
-        {activeMedia ? (
-          <>
-            <div className="portfolio-project__media-stage">
-              {activeMedia.type ===
-              'image' ? (
-                <img
-                  src={activeMedia.src}
-                  alt={activeMedia.alt}
-                />
-              ) : (
-                <>
-                  <video
-                    key={activeMedia.src}
-                    ref={videoRef}
-                    src={activeMedia.src}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    onPlay={() =>
-                      setVideoPlaying(true)
-                    }
-                    onPause={() =>
-                      setVideoPlaying(false)
-                    }
-                    onEnded={() =>
-                      setVideoPlaying(false)
-                    }
-                  />
+      {presentation === 'current-site' ? (
+        <div className="portfolio-project__current-site">
+          <p className="portfolio-project__current-label">
+            CURRENT SITE / LIVE
+          </p>
 
-                  {!videoPlaying && (
-                    <button
-                      type="button"
-                      className="portfolio-project__video-play"
-                      onClick={playVideo}
-                      aria-label="Play project video"
-                    >
-                      <span aria-hidden="true">
-                        ▶
-                      </span>
+          <strong>
+            You're viewing it.
+          </strong>
 
-                      <span>Play Video</span>
-                    </button>
-                  )}
-                </>
-              )}
-            </div>
-
-            <div className="portfolio-project__media-controls">
-              {project.media.length > 1 ? (
-                <button
-                  type="button"
-                  onClick={
-                    showPreviousMedia
-                  }
-                  aria-label="Previous project media"
-                >
-                  ← Previous
-                </button>
-              ) : (
-                <span />
-              )}
-
-              <div className="portfolio-project__media-status">
-                <span>
-                  {activeMedia.type ===
-                  'video'
-                    ? 'VIDEO'
-                    : 'IMAGE'}
-                </span>
-
-                <strong>
-                  {activeMediaIndex + 1}
-                  {' / '}
-                  {project.media.length}
-                </strong>
-
+          <p>
+            This portfolio and the surrounding
+            Dragoon Interactive website are the
+            work being presented here.
+          </p>
+        </div>
+      ) : (
+        <div className="portfolio-project__media">
+          {activeMedia ? (
+            <>
+              <div className="portfolio-project__media-stage">
                 {activeMedia.type ===
-                  'video' && (
-                  <span>
-                    {videoPlaying
-                      ? 'PLAYING'
-                      : 'PAUSED'}
-                  </span>
+                  'image' ? (
+                  <img
+                    src={activeMedia.src}
+                    alt={activeMedia.alt}
+                  />
+                ) : (
+                  <>
+                    <video
+                      key={activeMedia.src}
+                      ref={videoRef}
+                      src={activeMedia.src}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      onPlay={() =>
+                        setVideoPlaying(true)
+                      }
+                      onPause={() =>
+                        setVideoPlaying(false)
+                      }
+                      onEnded={() =>
+                        setVideoPlaying(false)
+                      }
+                    />
+
+                    {!videoPlaying && (
+                      <button
+                        type="button"
+                        className="portfolio-project__video-play"
+                        onClick={playVideo}
+                        aria-label="Play project video"
+                      >
+                        <span aria-hidden="true">
+                          ▶
+                        </span>
+
+                        <span>
+                          Play Video
+                        </span>
+                      </button>
+                    )}
+                  </>
                 )}
               </div>
 
-              {project.media.length > 1 ? (
-                <button
-                  type="button"
-                  onClick={showNextMedia}
-                  aria-label="Next project media"
-                >
-                  Next →
-                </button>
-              ) : (
-                <span />
-              )}
+              <div className="portfolio-project__media-controls">
+                {project.media.length > 1 ? (
+                  <button
+                    type="button"
+                    onClick={
+                      showPreviousMedia
+                    }
+                    aria-label="Previous project media"
+                  >
+                    ← Previous
+                  </button>
+                ) : (
+                  <span />
+                )}
+
+                <div className="portfolio-project__media-status">
+                  <span>
+                    {activeMedia.type ===
+                      'video'
+                      ? 'VIDEO'
+                      : 'IMAGE'}
+                  </span>
+
+                  <strong>
+                    {activeMediaIndex + 1}
+                    {' / '}
+                    {project.media.length}
+                  </strong>
+
+                  {activeMedia.type ===
+                    'video' && (
+                      <span>
+                        {videoPlaying
+                          ? 'PLAYING'
+                          : 'PAUSED'}
+                      </span>
+                    )}
+                </div>
+
+                {project.media.length > 1 ? (
+                  <button
+                    type="button"
+                    onClick={showNextMedia}
+                    aria-label="Next project media"
+                  >
+                    Next →
+                  </button>
+                ) : (
+                  <span />
+                )}
+              </div>
+            </>
+          ) : (
+            <div className="portfolio-project__media-empty">
+              PROJECT MEDIA
             </div>
-          </>
-        ) : (
-          <div className="portfolio-project__media-empty">
-            PROJECT MEDIA
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
 
       <div className="portfolio-project__content">
         <p className="portfolio-project__tech">
           <span className="portfolio-project__type">
-            {project.type === 'solo'
-              ? 'SOLO PROJECT'
-              : 'TEAM PROJECT'}
+            {presentation === 'current-site'
+              ? 'CURRENT WEBSITE'
+              : project.type === 'solo'
+                ? 'SOLO PROJECT'
+                : 'TEAM PROJECT'}
           </span>
 
           {' / '}

@@ -4,6 +4,10 @@ export type PortfolioMedia = {
   alt: string
 }
 
+export type PortfolioPresentation =
+  | 'media'
+  | 'current-site'
+
 export type ExperienceMode =
   | 'development'
   | 'work'
@@ -14,6 +18,8 @@ export type PortfolioProject = {
   type: 'solo' | 'team'
   tech: string[]
   description: string
+
+  presentation?: PortfolioPresentation
 
   contribution?: string
   members?: string[]
